@@ -7,6 +7,10 @@ import { Content } from "../components/section";
 import { Title, Text } from "../components/typography";
 import { List, ListItem } from "../components/content";
 
+import hljs from 'highlight.js';
+import javascript from 'highlight.js/lib/languages/javascript';
+hljs.registerLanguage('javascript', javascript);
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
