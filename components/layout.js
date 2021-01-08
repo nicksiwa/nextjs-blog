@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Title } from "./heading";
+import { Title } from "./typography";
 import { Avatar } from "./image";
 import { A } from "./link";
 import { Header, Container } from "./section";
@@ -30,7 +30,7 @@ export default function Layout({ children, home }) {
         {home ? (
           <>
             <Avatar src="/images/profile.jpg" alt={name} />
-            <Title xl>{name}</Title>
+            <Title xxl>{name}</Title>
           </>
         ) : (
           <>
