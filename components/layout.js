@@ -1,14 +1,16 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
+import { Title } from "./heading";
+import { Avatar } from "./image";
+import { A } from "./link";
+import { Header, Container } from "./section";
 
-const name = 'Siwa Khongsuphap'
-export const siteTitle = 'Next.js Sample Website'
+const name = "Siwa Khongsuphap";
+export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -24,43 +26,35 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <Header>
         {home ? (
           <>
-            <img
-              src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <Avatar src="/images/profile.jpg" alt={name} />
+            <Title xl>{name}</Title>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
+                <Avatar src="/images/profile.jpg" alt={name} />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <Title md>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <A inherit>{name}</A>
               </Link>
-            </h2>
+            </Title>
           </>
         )}
-      </header>
+      </Header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div style={{ marginTop: "3rem" }}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
-    </div>
-  )
+    </Container>
+  );
 }
