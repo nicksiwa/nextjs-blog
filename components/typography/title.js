@@ -1,11 +1,6 @@
-import React from "react";
 import style from "styled-components";
 
-function Title({ children, className }) {
-  return <h1 className={className}>{children}</h1>;
-}
-
-export default Title = style.h1`
+const Title = style.h1`
   ${props => props.xxl &&  `
     font-size: 2.5rem;
     line-height: 1.2;
@@ -32,4 +27,10 @@ export default Title = style.h1`
     font-size: 1.2rem;
     line-height: 1.5;
   `}
+
+  ${props => props.sm && `
+    font-size: 0.9rem;
+  `}
 `;
+
+export default Title;

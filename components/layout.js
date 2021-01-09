@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { Title } from "./typography";
 import { Avatar } from "./image";
-import { A } from "./link";
 import { Header, Container, Footer } from "./section";
 
 const name = "Siwa Khongsuphap";
@@ -14,6 +13,11 @@ export default function Layout({ children, home }) {
       <Container>
         <Head>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+          />
           <meta
             name="description"
             content="Learn how to build a personal website using Next.js"
@@ -33,20 +37,7 @@ export default function Layout({ children, home }) {
               <Avatar src="/images/profile.jpg" alt={name} />
               <Title xxl>{name}</Title>
             </>
-          ) : (
-            <>
-              <Link href="/">
-                <a>
-                  <Avatar src="/images/profile.jpg" alt={name} />
-                </a>
-              </Link>
-              <Title md>
-                <Link href="/">
-                  <A inherit>{name}</A>
-                </Link>
-              </Title>
-            </>
-          )}
+          ) : null}
         </Header>
         <main>{children}</main>
         {!home && (
@@ -57,9 +48,7 @@ export default function Layout({ children, home }) {
           </div>
         )}
       </Container>
-      <Footer>
-        Hello
-      </Footer>
+      <Footer>Hello</Footer>
     </>
   );
 }
