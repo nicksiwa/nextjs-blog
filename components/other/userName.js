@@ -22,7 +22,7 @@ const UserNameStyle = style(UserName)`
   }
 
 	> img {
-    width: auto;
+    width: auto !important;
 		margin: 5px 10px 5px 0 !important;
 	}
 `;

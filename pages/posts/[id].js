@@ -6,11 +6,10 @@ import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";
 import readingTime from "reading-time";
 import { getAllPostIds, getPostData } from "../../lib/posts";
-import Date from "../../components/date";
 import Layout from "../../components/layout";
 import { Title, Text } from "../../components/typography";
-import { UserName, ArticleTitle } from "../../components/other";
-import { Article, Tags } from '../../components/content';
+import { UserName, ArticleTitle, ArticleMeta } from "../../components/other";
+import { Article, Tags } from "../../components/content";
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 
@@ -38,14 +37,10 @@ export default function Post({ postData, stats }) {
         <ArticleTitle>
           <UserName name="Siwa Khongsuphap" />
           <Text sm light>
-            <Date dateString={postData.date} />
-            <span style={{ marginLeft: "5px" }}>•</span>
-            <span style={{ marginLeft: "5px" }}>{stats.text}</span>
+            <ArticleMeta date={postData.date} stats={stats} />
           </Text>
         </ArticleTitle>
-        <div>
-          {postData && postData.tags && <Tags tags={postData.tags} />}
-        </div>
+        <div>{postData && postData.tags && <Tags tags={postData.tags} />}</div>
         <img src={postData.hero_image} alt={postData.title} />
         <Text content>
           <ReactMarkdown
