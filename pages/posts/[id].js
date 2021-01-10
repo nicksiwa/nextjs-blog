@@ -46,6 +46,7 @@ export default function Post({ postData, stats }) {
         <div>
           {postData && postData.tags && <Tags tags={postData.tags} />}
         </div>
+        <img src={postData.hero_image} alt={postData.title} />
         <Text content>
           <ReactMarkdown
             children={postData.contentHtml}

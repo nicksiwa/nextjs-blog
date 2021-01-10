@@ -15,10 +15,15 @@ function UserName({ className, name }) {
 const UserNameStyle = style(UserName)`
 	display: flex;
 	align-items: center;
-	margin-right: 10px;
+  margin-right: 10px;
+  
+  > h1 {
+    margin: 5px 0;
+  }
 
 	> img {
-		margin-right: 10px !important;
+    width: auto;
+		margin: 5px 10px 5px 0 !important;
 	}
 `;
 

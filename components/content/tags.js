@@ -5,7 +5,7 @@ function Tags({ className, tags }) {
   return (
     <div className={className}>
       {tags.map((tag) => (
-        <span>{tag}</span>
+        <span>{`#${tag}`}</span>
       ))}
     </div>
   );

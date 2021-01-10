@@ -1,10 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
-import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
 import { Content } from "../components/section";
-import { Title, Text } from "../components/typography";
 import { List, ListItem } from "../components/content";
 
 export default function Home({ allPostsData }) {
@@ -23,18 +20,9 @@ export default function Home({ allPostsData }) {
       </Content>
 
       <Content md style={{ paddingTop: "10px" }}>
-        <Title lg>Blog</Title>
         <List>
-          {allPostsData.map(({ id, date, title }) => (
-            <ListItem key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <Text sm light>
-                <Date dateString={date} />
-              </Text>
-            </ListItem>
+          {allPostsData.map((post) => (
+            <ListItem post={post} />
           ))}
         </List>
       </Content>

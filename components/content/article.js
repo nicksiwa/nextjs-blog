@@ -2,7 +2,7 @@ import style from "styled-components";
 
 const Article = style.article`
   img {
-    margin: auto;
+    margin: 1rem 0;
 
     + span {
       display: block;

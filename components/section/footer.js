@@ -1,6 +1,15 @@
+import React from 'react'
 import style from "styled-components";
 
-const Footer = style.footer`
+function Footer({ className }) {
+  return (
+    <footer className={className}>
+      <p>Build with ❤️ by Siwa Khongsuphap</p>
+    </footer>
+  );
+}
+
+const FooterStyled = style(Footer)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,4 +19,4 @@ const Footer = style.footer`
   border-top: 1px solid #ddd;
 `;
 
-export default Footer;
+export default FooterStyled;
