@@ -9,8 +9,8 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
 import { Title, Text } from "../../components/typography";
-import { UserName } from "../../components/other";
-import { Article } from '../../components/content'
+import { UserName, ArticleTitle } from "../../components/other";
+import { Article, Tags } from '../../components/content';
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 
@@ -35,13 +35,16 @@ export default function Post({ postData, stats }) {
       </Head>
       <Article>
         <Title xl>{postData.title}</Title>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <ArticleTitle>
           <UserName name="Siwa Khongsuphap" />
           <Text sm light>
             <Date dateString={postData.date} />
             <span style={{ marginLeft: "5px" }}>•</span>
             <span style={{ marginLeft: "5px" }}>{stats.text}</span>
           </Text>
+        </ArticleTitle>
+        <div>
+          {postData && postData.tags && <Tags tags={postData.tags} />}
         </div>
         <Text content>
           <ReactMarkdown

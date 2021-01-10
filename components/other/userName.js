@@ -18,7 +18,7 @@ const UserNameStyle = style(UserName)`
 	margin-right: 10px;
 
 	> img {
-		margin-right: 10px;
+		margin-right: 10px !important;
 	}
 `;
 

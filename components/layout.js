@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Title } from "./typography";
 import { Avatar } from "./image";
-import { Header, Container, Footer } from "./section";
+import { Header, Container, Footer, Navbar } from "./section";
 
 const name = "Siwa Khongsuphap";
 export const siteTitle = "Next.js Sample Website";
@@ -10,6 +10,7 @@ export const siteTitle = "Next.js Sample Website";
 export default function Layout({ children, home }) {
   return (
     <>
+      <Navbar />
       <Container>
         <Head>
           <link rel="icon" href="/favicon.ico" />
