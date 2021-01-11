@@ -42,7 +42,7 @@ export default function Post({ postData, stats }) {
         </ArticleTitle>
         <div>{postData && postData.tags && <Tags tags={postData.tags} />}</div>
         <img src={postData.hero_image} alt={postData.title} />
-        <Text content>
+        <Text readContent>
           <ReactMarkdown
             children={postData.contentHtml}
             escapeHtml={false}

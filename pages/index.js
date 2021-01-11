@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
       <Content md style={{ paddingTop: "10px" }}>
         <List>
           {allPostsData.map((post) => (
-            <ListItem post={post} />
+            <ListItem post={post} key={post.id} />
           ))}
         </List>
       </Content>

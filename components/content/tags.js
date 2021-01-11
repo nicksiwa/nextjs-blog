@@ -4,8 +4,8 @@ import style from "styled-components";
 function Tags({ className, tags }) {
   return (
     <div className={className}>
-      {tags.map((tag) => (
-        <span>{`#${tag}`}</span>
+      {tags.map((tag, index) => (
+        <span key={index}>{`#${tag}`}</span>
       ))}
     </div>
   );

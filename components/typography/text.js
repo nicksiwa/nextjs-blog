@@ -16,7 +16,7 @@ const Text = style.div`
     font-size: 0.9rem;
   `}
 
-  ${props => props.content && `
+  ${props => props.readContent && `
     font-weight: 300;
     line-height: 2;
 

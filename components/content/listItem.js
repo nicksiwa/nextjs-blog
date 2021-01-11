@@ -10,7 +10,7 @@ function ListItem({ className, post }) {
   const stats = readingTime(contentHtml);
 
   return (
-    <li className={className} key={id}>
+    <li className={className}>
       <Link href={`/posts/${id}`}>
         <a>
           <img src={hero_image} alt={title} />
