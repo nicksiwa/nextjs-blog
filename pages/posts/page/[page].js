@@ -4,6 +4,7 @@ import { getPostPagination, getSortedPostsData } from "../../../lib/posts";
 import { Content } from "../../../components/section";
 import { List, ListItem } from "../../../components/content";
 import { POSTS_PER_PAGE } from "../../../constants/app";
+import { Pagination } from "../../../components/other";
 
 export default function Home({ posts, numPages, currentPage }) {
   return (
@@ -26,6 +27,8 @@ export default function Home({ posts, numPages, currentPage }) {
             <ListItem post={post} key={post.id} />
           ))}
         </List>
+
+        <Pagination numPages={numPages} currentPage={currentPage} />
       </Content>
     </Layout>
   );
