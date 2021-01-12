@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Router from "next/router";
 import style from "styled-components";
 import ReactPaginate from "react-paginate";
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "react-feather";
 
 function Pagination({ className, numPages, currentPage, linkUrl }) {
   const [page, setPage] = useState(currentPage);
@@ -14,9 +15,9 @@ function Pagination({ className, numPages, currentPage, linkUrl }) {
   return (
     <div className={className}>
       <ReactPaginate
-        previousLabel="Previous"
-        nextLabel="Next"
-        breakLabel="..."
+        previousLabel={<ChevronLeft />}
+        nextLabel={<ChevronRight />}
+        breakLabel={<MoreHorizontal />}
         pageCount={numPages}
         initialPage={currentPage - 1}
         activeClassName="actived"
