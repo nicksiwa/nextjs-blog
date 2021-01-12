@@ -35,8 +35,8 @@ const PaginationStyle = style(Pagination)`
     padding: 0;
 
     > li {
-      min-width: 40px;
-      min-height: 40px;
+      min-width: 30px;
+      min-height: 30px;
       margin: 0 10px;
 
       > a {
@@ -46,6 +46,7 @@ const PaginationStyle = style(Pagination)`
         width: 100%;
         height: 100%;
         cursor: pointer;
+        font-size: 0.9rem;
       }
 
       &.actived {
@@ -53,6 +54,7 @@ const PaginationStyle = style(Pagination)`
           color: #fff;
           background: ${props => props.theme.colors.primary};
           border-radius: 50%;
+          font-weight: bold;
         }
       }
     }

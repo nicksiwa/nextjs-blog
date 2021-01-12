@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { ArrowLeft } from "react-feather";
 import { Title } from "./typography";
 import { Avatar } from "./image";
 import { Header, Container, Footer, Navbar } from "./section";
@@ -8,6 +9,10 @@ const name = "Siwa Khongsuphap";
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children, home }) {
+  const router = useRouter();
+
+  const handleBack = () => router.back();
+
   return (
     <>
       <Navbar />
@@ -43,9 +48,9 @@ export default function Layout({ children, home }) {
         <main>{children}</main>
         {!home && (
           <div style={{ marginTop: "3rem" }}>
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
+            <a style={{ display: "flex", alignItems: "center", cursor: "pointer" }} onClick={handleBack}>
+              <ArrowLeft style={{ marginRight: "5px" }} /> Back
+            </a>
           </div>
         )}
       </Container>

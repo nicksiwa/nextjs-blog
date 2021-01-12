@@ -3,7 +3,7 @@ import style from "styled-components";
 const Container = style.section`
   max-width: 45rem;
   padding: 0 1rem;
-  margin: 1rem auto 6rem;
+  margin: 1rem auto 2rem;
 
   ${props => props.nav && `
     margin: 0 auto;
