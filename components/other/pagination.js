@@ -3,12 +3,12 @@ import Router from "next/router";
 import style from "styled-components";
 import ReactPaginate from "react-paginate";
 
-function Pagination({ className, numPages, currentPage }) {
+function Pagination({ className, numPages, currentPage, linkUrl }) {
   const [page, setPage] = useState(currentPage);
 
   const handleChangePage = ({ selected }) => {
     setPage(selected + 1);
-    Router.push(`/posts/page/${selected + 1}`)
+    Router.push(`${linkUrl}/${selected + 1}`)
   };
 
   return (
@@ -18,6 +18,7 @@ function Pagination({ className, numPages, currentPage }) {
         nextLabel="Next"
         breakLabel="..."
         pageCount={numPages}
+        initialPage={currentPage - 1}
         activeClassName="actived"
         onPageChange={handleChangePage}
       />

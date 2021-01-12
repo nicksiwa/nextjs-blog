@@ -28,7 +28,11 @@ export default function Home({ posts, numPages, currentPage }) {
           ))}
         </List>
 
-        <Pagination numPages={numPages} currentPage={currentPage} />
+        <Pagination
+          numPages={numPages}
+          currentPage={currentPage}
+          linkUrl="/posts/page"
+        />
       </Content>
     </Layout>
   );
